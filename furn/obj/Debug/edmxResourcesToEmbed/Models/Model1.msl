@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="furnModelStoreContainer" CdmEntityContainer="furndata">
+    <EntitySetMapping Name="tbl_Product">
+      <EntityTypeMapping TypeName="furnModel.tbl_Product">
+        <MappingFragment StoreEntitySet="tbl_Product">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="pkID" ColumnName="pkID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
