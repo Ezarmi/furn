@@ -10,11 +10,14 @@
 namespace furn.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
     public partial class furndata : DbContext
     {
+        internal IEnumerable<object> tbl_users;
+
         public furndata()
             : base("name=furndata")
         {

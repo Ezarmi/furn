@@ -79,3 +79,7 @@ C:\Users\Ezarm\Videos\HW\46-1 furn\furn\obj\Debug\furn.csproj.AssemblyReference.
 C:\Users\Ezarm\Videos\HW\46-1 furn\furn\obj\Debug\furn.csproj.CoreCompileInputs.cache
 C:\Users\Ezarm\Videos\HW\46-1 furn\furn\obj\Debug\furn.dll
 C:\Users\Ezarm\Videos\HW\46-1 furn\furn\obj\Debug\furn.pdb
+C:\Users\Ezarm\Dropbox\Documents\Projects\furn\furn\obj\Debug\furn.csproj.AssemblyReference.cache
+C:\Users\Ezarm\Dropbox\Documents\Projects\furn\furn\obj\Debug\furn.csproj.CoreCompileInputs.cache
+C:\Users\Ezarm\Dropbox\Documents\Projects\furn\furn\obj\Debug\furn.dll
+C:\Users\Ezarm\Dropbox\Documents\Projects\furn\furn\obj\Debug\furn.pdb
