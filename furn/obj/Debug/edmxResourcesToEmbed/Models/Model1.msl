@@ -11,5 +11,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_invoice">
+      <EntityTypeMapping TypeName="furnModel.tbl_invoice">
+        <MappingFragment StoreEntitySet="tbl_invoice">
+          <ScalarProperty Name="FactorNumber" ColumnName="FactorNumber" />
+          <ScalarProperty Name="tracking_id" ColumnName="tracking_id" />
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fkPID" ColumnName="fkPID" />
+          <ScalarProperty Name="fkUserID" ColumnName="fkUserID" />
+          <ScalarProperty Name="pkID" ColumnName="pkID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_users">
+      <EntityTypeMapping TypeName="furnModel.tbl_users">
+        <MappingFragment StoreEntitySet="tbl_users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="pkID" ColumnName="pkID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

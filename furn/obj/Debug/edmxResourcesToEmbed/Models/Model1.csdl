@@ -2,6 +2,16 @@
 <Schema Namespace="furnModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="furndata" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tbl_Product" EntityType="furnModel.tbl_Product" />
+    <EntitySet Name="tbl_invoice" EntityType="furnModel.tbl_invoice" />
+    <EntitySet Name="tbl_users" EntityType="furnModel.tbl_users" />
+    <AssociationSet Name="FK_Table_1_tbl_Product" Association="furnModel.FK_Table_1_tbl_Product">
+      <End Role="tbl_Product" EntitySet="tbl_Product" />
+      <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_1_tbl_users" Association="furnModel.FK_Table_1_tbl_users">
+      <End Role="tbl_users" EntitySet="tbl_users" />
+      <End Role="tbl_invoice" EntitySet="tbl_invoice" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="tbl_Product">
     <Key>
@@ -11,5 +21,56 @@
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="img" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_invoice" Relationship="furnModel.FK_Table_1_tbl_Product" FromRole="tbl_Product" ToRole="tbl_invoice" />
   </EntityType>
+  <EntityType Name="tbl_invoice">
+    <Key>
+      <PropertyRef Name="pkID" />
+    </Key>
+    <Property Name="pkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fkUserID" Type="Int32" Nullable="false" />
+    <Property Name="fkPID" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="transid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tracking_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FactorNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Product" Relationship="furnModel.FK_Table_1_tbl_Product" FromRole="tbl_invoice" ToRole="tbl_Product" />
+    <NavigationProperty Name="tbl_users" Relationship="furnModel.FK_Table_1_tbl_users" FromRole="tbl_invoice" ToRole="tbl_users" />
+  </EntityType>
+  <EntityType Name="tbl_users">
+    <Key>
+      <PropertyRef Name="pkID" />
+    </Key>
+    <Property Name="pkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Family" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_invoice" Relationship="furnModel.FK_Table_1_tbl_users" FromRole="tbl_users" ToRole="tbl_invoice" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Table_1_tbl_Product">
+    <End Type="furnModel.tbl_Product" Role="tbl_Product" Multiplicity="1" />
+    <End Type="furnModel.tbl_invoice" Role="tbl_invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Product">
+        <PropertyRef Name="pkID" />
+      </Principal>
+      <Dependent Role="tbl_invoice">
+        <PropertyRef Name="fkPID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_1_tbl_users">
+    <End Type="furnModel.tbl_users" Role="tbl_users" Multiplicity="1" />
+    <End Type="furnModel.tbl_invoice" Role="tbl_invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_users">
+        <PropertyRef Name="pkID" />
+      </Principal>
+      <Dependent Role="tbl_invoice">
+        <PropertyRef Name="fkUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

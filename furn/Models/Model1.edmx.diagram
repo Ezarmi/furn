@@ -6,6 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="20b5890d50a14cb1b99c78da3f3183bf" Name="Diagram1">
         <EntityTypeShape EntityType="furnModel.tbl_Product" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="furnModel.tbl_invoice" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="furnModel.tbl_users" Width="1.5" PointX="0.75" PointY="5" />
+        <AssociationConnector Association="furnModel.FK_Table_1_tbl_Product" />
+        <AssociationConnector Association="furnModel.FK_Table_1_tbl_users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
