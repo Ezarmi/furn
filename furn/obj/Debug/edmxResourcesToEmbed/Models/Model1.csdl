@@ -12,6 +12,7 @@
       <End Role="tbl_users" EntitySet="tbl_users" />
       <End Role="tbl_invoice" EntitySet="tbl_invoice" />
     </AssociationSet>
+    <EntitySet Name="View_invoice" EntityType="furnModel.View_invoice" />
   </EntityContainer>
   <EntityType Name="tbl_Product">
     <Key>
@@ -73,4 +74,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="View_invoice">
+    <Key>
+      <PropertyRef Name="pkID" />
+      <PropertyRef Name="fkUserID" />
+      <PropertyRef Name="fkPID" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="transid" />
+      <PropertyRef Name="tracking_id" />
+      <PropertyRef Name="FactorNumber" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Price" />
+    </Key>
+    <Property Name="pkID" Type="Int32" Nullable="false" />
+    <Property Name="fkUserID" Type="Int32" Nullable="false" />
+    <Property Name="fkPID" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="transid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tracking_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FactorNumber" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

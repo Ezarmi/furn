@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="furnModel.tbl_users" Width="1.5" PointX="0.75" PointY="5" />
         <AssociationConnector Association="furnModel.FK_Table_1_tbl_Product" />
         <AssociationConnector Association="furnModel.FK_Table_1_tbl_users" />
+        <EntityTypeShape EntityType="furnModel.View_invoice" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

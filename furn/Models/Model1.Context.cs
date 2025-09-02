@@ -28,5 +28,6 @@ namespace furn.Models
         public virtual DbSet<tbl_Product> tbl_Product { get; set; }
         public virtual DbSet<tbl_invoice> tbl_invoice { get; set; }
         public virtual DbSet<tbl_users> tbl_users { get; set; }
+        public virtual DbSet<View_invoice> View_invoice { get; set; }
     }
 }

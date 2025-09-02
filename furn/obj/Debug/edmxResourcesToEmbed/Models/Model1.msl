@@ -36,5 +36,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="View_invoice">
+      <EntityTypeMapping TypeName="furnModel.View_invoice">
+        <MappingFragment StoreEntitySet="View_invoice">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FactorNumber" ColumnName="FactorNumber" />
+          <ScalarProperty Name="tracking_id" ColumnName="tracking_id" />
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="fkPID" ColumnName="fkPID" />
+          <ScalarProperty Name="fkUserID" ColumnName="fkUserID" />
+          <ScalarProperty Name="pkID" ColumnName="pkID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
